@@ -1,0 +1,41 @@
+#######################################
+# Classes, datatypes (KEYWORD1)
+#######################################
+
+TouchMatriKeyPad	KEYWORD1
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+## TouchMatriKeyPad
+
+KEYPAD_KEYCODE_1    KEYWORD2
+KEYPAD_KEYCODE_2    KEYWORD2
+KEYPAD_KEYCODE_3    KEYWORD2
+KEYPAD_KEYCODE_A    KEYWORD2
+                    KEYWORD2
+KEYPAD_KEYCODE_4    KEYWORD2
+KEYPAD_KEYCODE_5    KEYWORD2
+KEYPAD_KEYCODE_6    KEYWORD2
+KEYPAD_KEYCODE_B    KEYWORD2
+                    KEYWORD2
+KEYPAD_KEYCODE_7    KEYWORD2
+KEYPAD_KEYCODE_8    KEYWORD2
+KEYPAD_KEYCODE_9    KEYWORD2
+KEYPAD_KEYCODE_C    KEYWORD2
+
+KEYPAD_KEYCODE_STAR KEYWORD2
+KEYPAD_KEYCODE_0    KEYWORD2
+KEYPAD_KEYCODE_POUND KEYWORD2
+KEYPAD_KEYCODE_D    KEYWORD2
+GetKeyCode	KEYWORD2
+GetKeyMap	KEYWORD2
+GetKey		KEYWORD2
+KeyPressed		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+FREQUENCY_OSCILLATOR  LITERAL1
