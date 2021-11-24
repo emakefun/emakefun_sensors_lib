@@ -3,7 +3,7 @@
 #######################################
 
 TouchMatriKeyPad	KEYWORD1
-
+TTS       		    KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -30,10 +30,48 @@ KEYPAD_KEYCODE_STAR KEYWORD2
 KEYPAD_KEYCODE_0    KEYWORD2
 KEYPAD_KEYCODE_POUND KEYWORD2
 KEYPAD_KEYCODE_D    KEYWORD2
-GetKeyCode	KEYWORD2
-GetKeyMap	KEYWORD2
-GetKey		KEYWORD2
-KeyPressed		KEYWORD2
+GetKeyCode	        KEYWORD2
+GetKeyMap	        KEYWORD2
+GetKey		        KEYWORD2
+KeyPressed		    KEYWORD2
+
+## TTS
+Start               KEYWORD2
+Stop                KEYWORD2
+Pause               KEYWORD2
+Continue            KEYWORD2
+TextCacheCmd        KEYWORD2
+Cplay               KEYWORD2
+RetStatus           KEYWORD2
+StatusQuery         KEYWORD2
+Dormant             KEYWORD2
+ExitHibernation     KEYWORD2
+
+S_CORRECT           KEYWORD2
+S_ERROR             KEYWORD2
+S_DATA              KEYWORD2
+S_MARK              KEYWORD2
+S_INIT              KEYWORD2
+S_BUSY              KEYWORD2
+S_IDLE              KEYWORD2
+
+## ASR_LD3320            
+ld3320_add_words          KEYWORD2
+ld3320_config_time        KEYWORD2
+ld3320_config_mode        KEYWORD2
+ld3320_config_keywords    KEYWORD2
+ld3320_reset              KEYWORD2
+ld3320_asr_start          KEYWORD2
+ld3320_get_result         KEYWORD2
+
+VOICE_IIC_ADDR            KEYWORD2
+VOICE_RESULT_REG          KEYWORD2
+VOICE_ERASE_REG           KEYWORD2
+VOICE_MODE_REG            KEYWORD2
+VOICE_CONFIG_TIME_REG     KEYWORD2
+VOICE_ADD_WORDS_REG       KEYWORD2
+VOICE_RESET_REG           KEYWORD2
+VOICE_ASR_START_REG       KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

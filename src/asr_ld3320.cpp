@@ -1,5 +1,5 @@
 #include <Wire.h>
-#include "asr_ld3320.h"
+#include "ASR_LD3320.h"
 
 bool WireWriteByte(uint8_t val)
 {

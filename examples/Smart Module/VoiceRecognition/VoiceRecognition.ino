@@ -1,4 +1,4 @@
-#include "asr_ld3320.h"
+#include "ASR_LD3320.h"
 
 void setup()
 {
@@ -8,7 +8,7 @@ void setup()
   ld3320_reset();
   ld3320_config_mode(asr_mode);  // 循环模式
 //  ld3320_config_keywords("xiao du xiao du");
-//  ld3320_config_time(10);    // wake up time 10s
+//  ld3320_config_time(10);    // 等待唤醒时间10s
   ld3320_add_words(1, "ni hao");  // 你好
   ld3320_add_words(2,"kai deng");          // 开灯
   ld3320_add_words(3, "xiao yi tong xue");              
