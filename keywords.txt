@@ -4,6 +4,7 @@
 
 TouchMatriKeyPad	KEYWORD1
 TTS       		    KEYWORD1
+EM_OLED             KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -72,6 +73,15 @@ VOICE_CONFIG_TIME_REG     KEYWORD2
 VOICE_ADD_WORDS_REG       KEYWORD2
 VOICE_RESET_REG           KEYWORD2
 VOICE_ASR_START_REG       KEYWORD2
+
+## EM_OLED
+u8g2_Setup_ssd1306_i2c_128x64_noname_1  KEYWORD2
+u8x8_SetPin_HW_I2C                      KEYWORD2
+GetFontData                             KEYWORD2
+GetUtf8ByteNum                          KEYWORD2
+CopyStr                                 KEYWORD2
+Copy                                    KEYWORD2
+ShowFont                                KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
