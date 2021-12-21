@@ -15,14 +15,13 @@ class EM_OLED: public U8G2
       u8g2_Setup_ssd1306_i2c_128x64_noname_1(&u8g2, rotation, u8x8_byte_arduino_hw_i2c, u8x8_gpio_and_delay_arduino);
       u8x8_SetPin_HW_I2C(getU8x8(), reset, clock, data);
     }
+    
+    uint8_t GetFontData(uint8_t * data, uint8_t  dat_len);
+    uint8_t GetUtf8ByteNum(uint8_t data);
     uint8_t ShowFont(uint8_t x, uint8_t y, uint8_t *str);
-    uint8_t ShowFont(uint8_t x, uint8_t y, String s);
+    //uint8_t ShowFont(uint8_t x, uint8_t y, String s);
     ~EM_OLED(){}
     private:
         uint8_t buff_fifo[32];
-		int GetFontData(uint8_t * data);
-        int GetUtf8ByteNum(uint8_t data);
-        int CopyStr(uint8_t *des, uint8_t *source, uint8_t len);
-        int Copy(uint8_t *des, uint8_t *source, uint8_t len);
 };
 #endif

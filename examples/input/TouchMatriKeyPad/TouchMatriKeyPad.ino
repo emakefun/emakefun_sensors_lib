@@ -15,7 +15,7 @@ void loop()
   uint16_t keycode = mKeyPad.GetKeyCode();
   if (keycode != 0xFFFF) {      //Determine whether the button is pressed
     String key_name = mKeyPad.GetKeyMap();
-    sprintf(str, "Get keycode: 0x%x\r\nkey name: %s \r\n", keycode, (char *)key_name.c_str()); 
+    sprintf(str, "Get keycode:0x%x name:%s", keycode, (char *)key_name.c_str());  
     //Convert the value of the key to a string
     Serial.println(str);    //Print the characters corresponding to the keys
   }
