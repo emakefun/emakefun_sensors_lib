@@ -5,6 +5,7 @@
 TouchMatriKeyPad	KEYWORD1
 TTS       		    KEYWORD1
 EM_OLED             KEYWORD1
+I2CExpansionBoard   KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -78,6 +79,11 @@ VOICE_ASR_START_REG       KEYWORD2
 GetFontData                             KEYWORD2
 GetUtf8ByteNum                          KEYWORD2
 ShowFont                                KEYWORD2
+
+##I2CExpansionBoard
+ConfigFunMode             KEYWORD2
+SetExGpioLevel            KEYWORD2
+GetExGpioLevel            KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
