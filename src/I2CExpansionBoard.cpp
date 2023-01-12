@@ -67,7 +67,7 @@ void I2CExpansionBoard::ConfigFunMode(uint8_t ex_gpio_pin, uint8_t mode)
 {
 	  uint8_t value[1];
     value[0] = mode;	 
-    WireWriteDataArray(ex_gpio_pin, value, 1);
+    WireWriteDataArray(ex_gpio_pin + EX_CONFIG_REG, value, 1);
 }
 
 uint8_t I2CExpansionBoard::SetExGpioLevel(uint8_t ex_gpio_pin, uint8_t level)
@@ -84,6 +84,12 @@ uint8_t I2CExpansionBoard::GetExGpioLevel(uint8_t ex_gpio_pin)
 	return value[0];
 }
 
+uint16_t I2CExpansionBoard::GetExAdcValue(uint8_t ex_gpio_pin)
+{
+  uint8_t value[2];
+  WireReadDataArray(ex_gpio_pin + EXPANSION_BOARD_RAW_BASE_REG, value, 2);
+  return (value[1] << 8)  | value[0];
+}
 
 I2CExpansionBoard::~I2CExpansionBoard()
 {

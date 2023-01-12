@@ -3,11 +3,11 @@
 
 #define EXPANSION_BOARD_ADDR 0x24  //扩展板地址
 
-#define EXPANSION_BOARD_RAW_BASE_REG 0x10
-#define EXPANSION_BOARD_VOLTAGE_BASE_REG 0x20
-#define EXPANSION_BOARDR_PERCENTAGE_BASE_REG 0x30
+#define EXPANSION_BOARD_RAW_BASE_REG 0x10  //  read ADC raw data
+#define EXPANSION_BOARD_VOLTAGE_BASE_REG 0x20   // read voltage 
+#define EXPANSION_BOARDR_PERCENTAGE_BASE_REG 0x30  // Read the ratio of input voltage to output voltage Input voltage / output voltage
 
-#define EX_CONFIG_REG 0x40
+#define EX_CONFIG_REG 0x40  
 #define E0_CONFIG_REG 0x40
 #define E1_CONFIG_REG 0x41
 #define E2_CONFIG_REG 0x42
@@ -27,9 +27,11 @@
 #define E6_IO_REG 0x56
 #define E7_IO_REG 0x57
 
-#define EXTERN_FUN_ADC_MODE 0x00
-#define EXTERN_FUN_INPUT_MODE 0x01
-#define EXTERN_FUN_OUT_MODE 0x02
+#define EXTERN_FUN_ADC_MODE 0x00    // Default ADC
+#define EXTERN_FUN_INPUT_UP_MODE 0x48 // Input Up
+#define EXTERN_FUN_INPUT_DOWN_MODE 0x28
+#define EXTERN_FUN_INPUT_FLOATING_MODE 0x04
+#define EXTERN_FUN_OUT_MODE 0x10    // Output
 
 #define I2C_E0 0
 #define I2C_E1 1
@@ -56,5 +58,6 @@ class I2CExpansionBoard
 	void ConfigFunMode(uint8_t ex_gpio_pin, uint8_t mode);
 	uint8_t SetExGpioLevel(uint8_t ex_gpio_pin, uint8_t level);
 	uint8_t GetExGpioLevel(uint8_t ex_gpio_pin);
+  uint16_t GetExAdcValue(uint8_t ex_gpio_pin);
     ~I2CExpansionBoard();
 };
