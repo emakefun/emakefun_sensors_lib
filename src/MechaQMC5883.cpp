@@ -50,7 +50,7 @@ int MechaQMC5883::read(int* x,int* y,int* z){
   Wire.write(0x00);
   int err = Wire.endTransmission();
   if (err) {return err;}
-  Wire.requestFrom(address, 7);
+  Wire.requestFrom(address, (uint8_t)7);
   *x = (Wire.read() | Wire.read() << 8);
   *y = (Wire.read() | Wire.read() << 8);
   *z = (Wire.read() | Wire.read() << 8);
