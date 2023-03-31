@@ -1,6 +1,7 @@
 #include "i2c_expansion_board.h"
 
 #include <Wire.h>
+#include <arduino.h>
 
 #define EXTERN_FUN_ADC_MODE (0x00)
 #define EXTERN_FUN_INPUT_UP_MODE (0x48)
@@ -13,7 +14,10 @@
 #define REGISTER_READ_WRITE_GPIO_LEVEL (0x50)
 
 I2cExpansionBoard::I2cExpansionBoard(uint8_t device_i2c_address)
-    : device_i2c_address_(device_i2c_address) {}
+    : device_i2c_address_(device_i2c_address) {
+  Wire.begin();
+  Wire.setWireTimeout(3000, true);
+}
 
 bool I2cExpansionBoard::SetGpioMode(I2cExpansionBoard::GpioPin gpio_pin,
                                     I2cExpansionBoard::GpioMode mode) {
@@ -37,12 +41,11 @@ bool I2cExpansionBoard::SetGpioMode(I2cExpansionBoard::GpioPin gpio_pin,
   }
 
   Wire.beginTransmission(device_i2c_address_);
-
-  for (uint8_t i = 0; i < sizeof(buffer); i++) {
-    Wire.write(buffer[i]);
-  }
-
-  if (0 != Wire.endTransmission()) {
+  Wire.write(buffer, sizeof(buffer));
+  auto ret = Wire.endTransmission();
+  if (ret != 0) {
+    Serial.print("Error occured when i2c writing: ");
+    Serial.println(ret);
     return false;
   }
 
@@ -54,11 +57,7 @@ bool I2cExpansionBoard::SetGpioLevel(I2cExpansionBoard::GpioPin gpio_pin,
   uint8_t buffer[] = {gpio_pin + REGISTER_READ_WRITE_GPIO_LEVEL, level};
 
   Wire.beginTransmission(device_i2c_address_);
-
-  for (uint8_t i = 0; i < sizeof(buffer); i++) {
-    Wire.write(buffer[i]);
-  }
-
+  Wire.write(buffer, sizeof(buffer));
   if (0 != Wire.endTransmission()) {
     return false;
   }
@@ -72,7 +71,7 @@ uint8_t I2cExpansionBoard::GetGpioLevel(I2cExpansionBoard::GpioPin gpio_pin) {
     return 0;
   }
 
-  Wire.requestFrom((int)device_i2c_address_, 1);
+  Wire.requestFrom(device_i2c_address_, (uint8_t)1);
   if (Wire.available()) {
     return Wire.read();
   }
