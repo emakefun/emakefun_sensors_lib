@@ -46,6 +46,7 @@ bool Bs8116aKeyPad::Init() {
       KEY_TRIGGER_THRESHOLD_VALUE,  // Key16 Trigger threshold value
   };
 
+  Wire.begin();
   Wire.beginTransmission(device_i2c_address_);
   Wire.write(SETTING_REGISTER_START_BYTE);
   uint8_t checksum = 0;
